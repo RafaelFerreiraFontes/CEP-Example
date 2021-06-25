@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <title>CEP</title>
+</head>
+
+<body>
+    
+    <div id="container">
+
+    <form id="item" action="/" method="POST"> 
+        <input type="text" id="cep" name="cep" placeholder="CEP" value="" size="10" maxlength="9" onblur="getCEPinfo(this.value);">
+        
+        <input type="text" id="rua" name="rua" placeholder="Rua">
+        
+        <input type="text" id="bairro" name="bairro" placeholder="Bairro">
+        
+        <input type="text" id="cidade" name="cidade" placeholder="Cidade">
+        
+        <input type="text" id="estado" name="estado" placeholder="Estado">
+        
+        <input type="text" id="ibge" name="ibge" placeholder="IBGE">
+    </form>
+
+    </div>
+
+    <script src="../scripts/script.js"></script>
+
+</body>
+
+</html>
