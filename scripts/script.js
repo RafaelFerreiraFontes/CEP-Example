@@ -11,10 +11,10 @@ function clearPlaceHolders(){
 }
 
 function postPlaceHolders(data){
-    //Checando se o cep foi encontrado.
+    //Check if cep is not found.
     if(!('erro' in data))
     {
-        //Preenchedo os dados coletados.
+        //Fill cep request in form.
         document.getElementById('rua').value = data.logradouro;
 
         document.getElementById('bairro').value = data.bairro;
@@ -28,7 +28,7 @@ function postPlaceHolders(data){
     }
     else
     {
-        //CEP não Encontrado.
+        //CEP Not found.
         clearPlaceHolders();
         alert("CEP não encontrado.");
     }
@@ -38,18 +38,18 @@ function getCEPinfo(value)
 {
     let cep = value.replace(/\D/g, '');
 
-        //Verifica se campo cep possui valor informado.
+        //Check if cep is fill.
         if (cep != "") 
         {
 
-            //Expressão regular para validar o CEP.
+            //Regular expression for cep.
             let validacep = /^[0-9]{8}$/;
 
-            //Valida o formato do CEP.
+            //Validate cep format.
             if(validacep.test(cep)) 
             {
 
-                //Preenche os campos com "..." enquanto consulta webservice.
+                //Fill field with "...", while request webservice.
                 document.getElementById('rua').value= "...";
 
                 document.getElementById('bairro').value= "...";
@@ -68,14 +68,14 @@ function getCEPinfo(value)
             }
             else
             {
-                //cep é inválido.
+                //cep invalid.
                 clearPlaceHolders();
                 alert("Formato de CEP inválido.");
             }
         }
         else
         {
-            //cep sem valor, limpa formulário.
+            //cep not field.
             clearPlaceHolders();
         }
 }
